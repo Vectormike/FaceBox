@@ -1,17 +1,15 @@
-import React from 'react';
-import Tilt from 'react-tilt'
+import React from 'react'
 
 const Navigation = () => {
     return (
         <div>
-            <nav className="navbar navbar-dark bg-dark">
-                <a className="navbar-brand" href="j">
-                    <Tilt className="Tilt" data-tilt data-tilt-glare="true" data-tilt-scale="1.1" options={{ transition: true, perspective: 1000, max : 35 }} style={{ height: 50, width: 50 }} >
-                        <div className="Tilt-inner"><i class="fas fa-grin-beam"></i></div>
-                    </Tilt>         
-                </a>
+            <nav className="dt w-100 border-box pa3 ph5-ns">
+                <div className="dtc v-mid w-75 tr">
+                    <div className="ph3">
+                    <a className="f7 dim br3 ph3 pv2 mb2 dib white bg-gray" href="#0">Login</a>
+                    </div>
+                </div>
             </nav>
-            
         </div>
     );
 }
