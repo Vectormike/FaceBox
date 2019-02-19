@@ -1,15 +1,22 @@
 import React from 'react'
 
-const ImageForm = () => {
+const ImageForm = ({OnInputChange, onButtonSubmit}) => {
     return (
-        <div className="pa4-l">
-            <form className="bg-light-blue mw7 center pa4 br2-ns ba b--black-10">
+        <div className="pa4 fl">
+            <form className="bg-light-blue mw7 pa4 br4 ba b--black-10">
                 <fieldset className="cf bn ma0 pa0">
                     <legend className="pa0 f2 f4-ns mb3 black-80">Face Detection</legend>
                     <div className="cf">
-                        <label className="clip" for="ImageForm">ImageForm</label>
-                        <input className="f6 f5-l input-reset bn fl black-80 bg-white pa3 lh-solid w-100 w-75-m w-80-l br2-ns br--left-ns" placeholder="Paste Image Link" type="text" name="ImageForm"/>
-                        <input className="f6 f5-l button-reset fl pv3 tc bn bg-animate bg-black-70 hover-bg-black white pointer w-100 w-25-m w-20-l br2-ns br--right-ns" type="submit" value="Detect"/>
+                        <label className="clip" htmlFor="ImageForm">ImageForm</label>
+                        <input 
+                            className="f6 f5-l input-reset bn fl black-80 bg-white pa3 lh-solid w-100 w-75-m w-80-l br3" placeholder="Paste Image Link" type="text" name="ImageForm"
+                            onChange={OnInputChange}
+                        />
+                        <button 
+                            className="f6 br3 f5-l button-reset grow fl pv3 tc bn bg-animate bg-black-70 hover-bg-yellow black pointer w-100 w-25-m w-20-l br3" type="submit"
+                            onClick={onButtonSubmit}>
+                            Detect    
+                        </button>
                     </div>
                 </fieldset>
             </form>
