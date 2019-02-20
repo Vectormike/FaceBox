@@ -12,11 +12,11 @@ const ImageForm = ({OnInputChange, onButtonSubmit}) => {
                             className="f6 f5-l input-reset bn fl black-80 bg-white pa3 lh-solid w-100 w-75-m w-80-l br3" placeholder="Paste Image Link" type="text" name="ImageForm"
                             onChange={OnInputChange}
                         />
-                        <button 
-                            className="f6 br3 f5-l button-reset grow fl pv3 tc bn bg-animate bg-black-70 hover-bg-yellow black pointer w-100 w-25-m w-20-l br3" type="submit"
-                            onClick={onButtonSubmit}>
-                            Detect    
-                        </button>
+                        <input 
+                            className="f6 br3 f5-l grow fl pv3 tc bn bg-animate bg-black-70 hover-bg-yellow black pointer w-100 w-25-m w-20-l br3" type="button"
+                            onClick={onButtonSubmit}
+                            value="Detect"    
+                        />
                     </div>
                 </fieldset>
             </form>
