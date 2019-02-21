@@ -31,13 +31,20 @@ class App extends Component {
 
   onButtonSubmit = () => {
     //Set input 
-    this.setState({imageUrl: this.state.input})
+    this.setState(
+      {
+        imageUrl: this.state.input
+      }
+      )
     //Trigger predict model
-    app.models.predict(Clarifai.FACE_DETECT_MODEL, this.state.input )
+    app.models.predict(
+      Clarifai.FACE_DETECT_MODEL, 
+      this.state.input 
+      )
     .then(
     function(response) {
       // do something with response
-      console.log(response, `Face`)
+      console.log(response.outputs[0].data.regions[0].region_info.bounding_box, `Face`)
     },
     function(err) {
       // there was an error
