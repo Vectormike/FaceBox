@@ -3,6 +3,7 @@ import Clarifai from 'clarifai';
 import Navigation from './components/Navigation/Navigation'
 import Logo from './components/Logo/Logo'
 import ImageForm from './components/ImageForm/ImageForm'
+import FaceRecognition from './components/FaceRecognition/FaceRecognition'
 import './App.css' 
 
 
@@ -16,22 +17,27 @@ class App extends Component {
     super();
 
     this.state = {
-      input: ''
+      input: '',
+      imageUrl: ''
     }
   }
 
   
 
   OnInputChange = (event) => {
-    console.log(event.target.value)
+    //Set imageUrl state when event is triggered
+    this.setState({input: event.target.value})
   }
 
   onButtonSubmit = () => {
-    console.log('Click!')
-    app.models.predict("a403429f2ddf4b49b307e318f00e528b", "https://samples.clarifai.com/face-det.jpg").then(
+    //Set input 
+    this.setState({imageUrl: this.state.input})
+    //Trigger predict model
+    app.models.predict(Clarifai.FACE_DETECT_MODEL, this.state.input )
+    .then(
     function(response) {
       // do something with response
-      console.log(response)
+      console.log(response, `Face`)
     },
     function(err) {
       // there was an error
@@ -46,6 +52,7 @@ class App extends Component {
         <Navigation/>
         <Logo/>
         <ImageForm onButtonSubmit={this.onButtonSubmit} OnInputChange={this.OnInputChange}/>
+        <FaceRecognition imageUrl={this.state.imageUrl}/>
       </div>
     );
   }
