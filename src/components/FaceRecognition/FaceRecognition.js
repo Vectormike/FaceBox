@@ -8,9 +8,10 @@ const FaceRecognition = ({imageUrl}) => {
                     alt="Oops!" 
                     title="Look at that face!" 
                     src={imageUrl}
+                    height='auto'
+                    width='500px'
                 />
             </div>
-            
         </div>
     );
 }
