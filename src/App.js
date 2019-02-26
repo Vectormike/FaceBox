@@ -18,38 +18,45 @@ class App extends Component {
 
     this.state = {
       input: '',
-      imageUrl: ''
+      imageUrl: '',
+      box: {}
     }
   }
 
-  
+  // Face Location box calculator
+  calculateFaceLocation = (data) => {
+    //Init responses from api 
+    const clarifaiFace = data.outputs[0].data.regions[0].region_info.bounding_box;
+    const image = document.getElementById('input-image');
+    const width = Number(image.width);
+    const height = Number(image.height);
+    return {
+      
+    }
+  }
 
+  //Input change event on Input field
   OnInputChange = (event) => {
     //Set imageUrl state when event is triggered
     this.setState({input: event.target.value})
   }
 
+  //Event for onClick button
   onButtonSubmit = () => {
     //Set input 
-    this.setState(
-      {imageUrl: this.state.input}
-    )
+    this.setState({imageUrl: this.state.input})
 
     //Trigger predict model
-    app.models.predict(
-      Clarifai.FACE_DETECT_MODEL, this.state.input 
+    app.models
+    .predict(
+      Clarifai.FACE_DETECT_MODEL, 
+      this.state.input 
     )
-    .then(
-    function(response) {
-      // do something with response
-      console.log(response.outputs[0].data.regions[0].region_info.bounding_box, `Face`)
-    },
-    function(err) {
-      // there was an error
-      console.log(err, `There was an error`)
-    }
-  );
-  }
+    .then(response => this.calculateFaceLocation(response))
+    .catch(err => console.log(err, 'Error on predict model'))
+  }    
+  
+
 
   render() {
     let image;
@@ -62,7 +69,9 @@ class App extends Component {
       <div className="App">
         <Navigation/>
         <Logo/>
-        <ImageForm onButtonSubmit={this.onButtonSubmit} OnInputChange={this.OnInputChange}/>
+        <ImageForm 
+          onButtonSubmit={this.onButtonSubmit} 
+          OnInputChange={this.OnInputChange}/>
         {image}        
       </div>
     );
