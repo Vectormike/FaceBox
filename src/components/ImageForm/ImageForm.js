@@ -2,7 +2,7 @@ import React from 'react'
 
 const ImageForm = ({OnInputChange, onButtonSubmit}) => {
     return (
-        <div className="pa4">
+        <div className="pa4 ">
             <form className="bg-light-blue mw7 pa4 br4 ba b--black-10">
                 <fieldset className="cf bn ma0 pa0">
                     <legend className="pa0 f2 f4-ns mb3 black-80">Face Detection</legend>
