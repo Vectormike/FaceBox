@@ -30,8 +30,20 @@ class App extends Component {
     const image = document.getElementById('input-image');
     const width = Number(image.width);
     const height = Number(image.height);
+
+    //Some fucked up math -- God! I hate math
     return {
-      
+      //response.percentage(left column) x the width of the image = 
+      //width of the actual display & where it should be.
+      leftCol: clarifaiFace.left_col * width,
+
+      //width minus response.percent(right column) x width =
+      //the width from left to the actual position
+      rightCol: width - (clarifaiFace.right_col * width),
+
+      //response.percent(left row) x height = 
+      //height and display location.
+      topRow: clarifaiFace.top_row * height
     }
   }
 
