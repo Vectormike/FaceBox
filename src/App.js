@@ -43,7 +43,11 @@ class App extends Component {
 
       //response.percent(left row) x height = 
       //height and display location.
-      topRow: clarifaiFace.top_row * height
+      topRow: clarifaiFace.top_row * height,
+
+      //response.percent(bottom row) x height = 
+      //height and display location.
+      bottomRow: height - (clarifaiFace.bottom_row * height) 
     }
   }
 
