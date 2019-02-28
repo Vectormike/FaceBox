@@ -53,7 +53,6 @@ class App extends Component {
 
   //To display face  
   FaceRecognitionBox = (box) => {
-    console.log(box)
     this.setState({box: box})
   }
 
