@@ -51,6 +51,13 @@ class App extends Component {
     }
   }
 
+  //To display face  
+  FaceRecognitionBox = (box) => {
+    console.log(box)
+    this.setState({box: box})
+  }
+
+
   //Input change event on Input field
   OnInputChange = (event) => {
     //Set imageUrl state when event is triggered
@@ -68,17 +75,18 @@ class App extends Component {
       Clarifai.FACE_DETECT_MODEL, 
       this.state.input 
     )
-    .then(response => this.calculateFaceLocation(response))
+    //Retrieve promise which is to display facebox and calculate location as callback
+    .then(response => this.FaceRecognitionBox(this.calculateFaceLocation(response)))
     .catch(err => console.log(err, 'Error on predict model'))
   }    
   
-
+  
 
   render() {
     let image;
     (this.state.imageUrl.length === 0) ?
     image = <p className='bg-gray br3 f3 grow dim pa2 ma5'>Your image will show here, mate</p> :
-    image = <FaceRecognition imageUrl={this.state.imageUrl}/>
+    image = <FaceRecognition box={this.state.box} imageUrl={this.state.imageUrl}/>
 
 
     return (
