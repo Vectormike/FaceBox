@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom'
 import Clarifai from 'clarifai';
+import Home from './components/Home/Home'
 import Navigation from './components/Navigation/Navigation'
 import SignIn from './components/SignIn/Signin'
 import Logo from './components/Logo/Logo'
@@ -91,7 +93,9 @@ class App extends Component {
 
     return (
       <div className="App">
-        <Navigation/>
+        <Route exact path='/' component={Home}/>
+
+        <Navigation/>  
         <SignIn/>
         <Logo/>
         <ImageForm 
