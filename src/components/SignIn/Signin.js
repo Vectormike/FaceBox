@@ -1,6 +1,8 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 
 const Signin = () => {
+
     return (
         <article class="br4 ba dark-gray b--black-10 mv4 w-100 w-50-m w-25-l mw5 center">
             <main className="pa4 black-80">
@@ -24,10 +26,14 @@ const Signin = () => {
                         </div>
                     </fieldset>
                     <div className="">
-                        <input className="b ph3 pv2 input-reset ba b--blue bg-transparent grow f6 dib" type="submit" value="Login" />
+                        <Link to="/login" 
+                            className="b ph3 pv2 input-reset ba b--blue bg-transparent grow pointer f6" 
+                            type="submit">
+                            Login
+                        </Link>
                     </div>
                     <div class="lh-copy mt3">
-                        <a href="#0" className="f6 link dim black db">Sign up</a>
+                        <Link to="/signup" className="f6 link dim black db">Sign up</Link>
                     </div>
                 </form>
             </main>
