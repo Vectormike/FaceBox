@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom'
 import Clarifai from 'clarifai';
 import Home from './components/Home/Home'
 import Navigation from './components/Navigation/Navigation'
-import SignIn from './components/SignIn/Signin'
+import Signin from './components/SignIn/Signin'
 import Logo from './components/Logo/Logo'
 import ImageForm from './components/ImageForm/ImageForm'
 import FaceRecognition from './components/FaceRecognition/FaceRecognition'
@@ -94,10 +94,9 @@ class App extends Component {
     return (
       <div className="App">
         <Route exact path='/' component={Home}/>
-
         <Navigation/>  
-        <SignIn/>
         <Logo/>
+        <Route path='/login' component={Signin}/>
         <ImageForm 
           onButtonSubmit={this.onButtonSubmit} 
           OnInputChange={this.OnInputChange}/>
