@@ -20,10 +20,11 @@ const Home = () => {
                 href="#">
                 Sign Up
                 </a>
-                <a class="f6 br-pill dark-green no-underline ba grow pv2 ph3 dib"
-                href="#">
-                Learn More
-                </a>
+                <Link 
+                    to="/login" 
+                    className="f6 br-pill dark-green no-underline ba grow pv2 ph3 dib">
+                    Login
+                </Link>
             </div>
         </article>
 
