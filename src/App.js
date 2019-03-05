@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Clarifai from 'clarifai';
 import Navigation from './components/Navigation/Navigation'
+import SignIn from './components/SignIn/Signin'
 import Logo from './components/Logo/Logo'
 import ImageForm from './components/ImageForm/ImageForm'
 import FaceRecognition from './components/FaceRecognition/FaceRecognition'
@@ -91,6 +92,7 @@ class App extends Component {
     return (
       <div className="App">
         <Navigation/>
+        <SignIn/>
         <Logo/>
         <ImageForm 
           onButtonSubmit={this.onButtonSubmit} 
