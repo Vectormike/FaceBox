@@ -24,7 +24,7 @@ const Signin = () => {
                             <label className="db fw6 lh-copy f6">Password</label>
                             <input className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="password" name="password"  id="password" />
                         </div>
-                    </fieldset>n
+                    </fieldset>
                     <div className="">
                         <Link to="/app" 
                             className="b ph3 pv2 input-reset ba b--blue bg-transparent grow pointer f6" 
