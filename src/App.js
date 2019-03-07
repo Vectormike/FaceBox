@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import Clarifai from 'clarifai';
 import Home from './components/Home/Home'
 import Navigation from './components/Navigation/Navigation'
@@ -93,14 +93,24 @@ class App extends Component {
 
     return (
       <div className="App">
-        <Route exact path='/' component={Home}/>
-        <Navigation/>  
-        <Logo/>
-        <Route path='/login' component={Signin}/>
-        <ImageForm 
-          onButtonSubmit={this.onButtonSubmit} 
-          OnInputChange={this.OnInputChange}/>
-        {image}        
+        <Switch>
+          <Route exact path='/' component={Home}/>
+          <Route path='/login' component={Signin}/>
+          <Route path='/app' render={() =>{
+            return  (
+              <div>
+              <Navigation/>  
+              <Logo/>
+              <ImageForm 
+                onButtonSubmit={this.onButtonSubmit} 
+                OnInputChange={this.OnInputChange}/>
+              {image}        
+            </div>
+          ) 
+        }}/>
+        </Switch>
+        
+        
       </div>
     );
   }
