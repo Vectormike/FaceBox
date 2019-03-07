@@ -1,1 +1,1 @@
-A Face Recognition built with React and Node
+A Face Recognition built with React and Node.js(Express)
