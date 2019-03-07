@@ -15,11 +15,8 @@ const Home = () => {
             <p class="fw1 f5 mt0 mb3">
                 Sign up for beta access or learn more about x.
             </p>
-            <div>
-                <a class="f6 br-pill bg-dark-green no-underline washed-green ba b--dark-green grow pv2 ph3 dib mr3"
-                href="#">
-                Sign Up
-                </a>
+            <div>                
+
                 <Link 
                     to="/login" 
                     className="f6 br-pill dark-green no-underline ba grow pv2 ph3 dib">
