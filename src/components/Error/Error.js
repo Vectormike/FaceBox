@@ -1,9 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export default  Error = () => {
+const Error = () => {
     return (
         <div>
             <p>Error: Unknown path!</p>
         </div>
     );
 }
+
+export default Error;
