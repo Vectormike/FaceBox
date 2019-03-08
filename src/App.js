@@ -7,6 +7,7 @@ import Signin from './components/SignIn/Signin'
 import Logo from './components/Logo/Logo'
 import ImageForm from './components/ImageForm/ImageForm'
 import FaceRecognition from './components/FaceRecognition/FaceRecognition'
+import Error from './components/Error/Error'
 import './App.css' 
 
 // Saved api key as app
@@ -108,6 +109,7 @@ class App extends Component {
             </div>
           ) 
         }}/>
+        <Route component={Error}/>
         </Switch>
         
         
