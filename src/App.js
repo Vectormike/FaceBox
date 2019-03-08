@@ -4,6 +4,7 @@ import Clarifai from 'clarifai';
 import Home from './components/Home/Home'
 import Navigation from './components/Navigation/Navigation'
 import Signin from './components/SignIn/Signin'
+import Register from './components/Register/Register'
 import Logo from './components/Logo/Logo'
 import ImageForm from './components/ImageForm/ImageForm'
 import FaceRecognition from './components/FaceRecognition/FaceRecognition'
@@ -97,6 +98,7 @@ class App extends Component {
         <Switch>
           <Route exact path='/' component={Home}/>
           <Route path='/login' component={Signin}/>
+          <Route path='/register' component={Register}/>
           <Route path='/app' render={() =>{
             return  (
               <div>
