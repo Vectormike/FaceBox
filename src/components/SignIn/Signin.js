@@ -33,7 +33,7 @@ const Signin = () => {
                         </Link>
                     </div>
                     <div class="lh-copy mt3">
-                        <Link to="/signup" className="f6 link dim black db">Sign up</Link>
+                        <Link to="/register" className="f6 link dim black db">Sign up</Link>
                     </div>
                 </form>
             </main>
