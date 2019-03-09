@@ -89,7 +89,7 @@ class App extends Component {
   render() {
     let image;
     (this.state.imageUrl.length === 0) ?
-    image = <p className='bg-gray br3 f3 grow dim pa2 ma5'>Your image will show here, mate</p> :
+    image = <p className='bg-gray br3 f3 grow dim pa2 ma5'>Your image will show here, mate. Just click detect after you past a link to the image.</p> :
     image = <FaceRecognition box={this.state.box} imageUrl={this.state.imageUrl}/>
 
 
